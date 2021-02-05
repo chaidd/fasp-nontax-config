@@ -1,0 +1,70 @@
+zuul:
+  routes:
+    user:
+      path: /user/**
+      serviceId: service-user
+    menu:
+      path: /menu/**
+      serviceId: service-menu
+    feign:
+      path: /login/**
+      serviceId: service-login
+    order:
+      path: /order/**
+      serviceId: service-order
+    base:
+      path: /base/**
+      serviceId: service-base
+    hessian:
+      path: /hessian/**
+      serviceId: service-hessian
+    voucher:
+      path: /voucher/**
+      serviceId: service-voucher
+    recon:
+      path: /recon/**
+      serviceId: service-recon
+    statistics:
+      path: /statistics/**
+      serviceId: service-statistics
+    einvoice:
+      path: /einvoice/**
+      serviceId: service-einvoice
+    billnumber:
+      path: /billnumber/**
+      serviceId: service-billnumber
+    task:
+      path: /task/**
+      serviceId: service-task
+    web:
+      path: /web/**
+      serviceId: service-web
+    notice:
+      path: /notice/**
+      serviceId: service-notice
+    blockchain:
+      path: /blockchain/**
+      serviceId: service-blockchain
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 50000
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+ribbon:
+  ReadTimeout: 50000
+  ConnectTimeout: 50000
+management:
+  security:
+    enabled: false
+security:
+  basic:
+    enabled: false
+spring:
+  zipkin:
+    base-url: http://localhost:8082
+
+
